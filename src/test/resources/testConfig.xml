@@ -178,8 +178,6 @@ http://www.w3.org/TR/html401/struct/global.html
                 <literal value="false"/>
             </literal-list>
         </attribute>
-        <attribute name="dir"/>
-
 
         <!-- Common to all HTML tags  -->
 
@@ -567,7 +565,6 @@ http://www.w3.org/TR/html401/struct/global.html
 
         <attribute name="draggable"/>
         <attribute name="contenteditable"/>
-        <attribute name="dir"/>
     </global-tag-attributes>
 
     <!-- Declare "dynamic" tag attributes here. The directive "allowDynamicAttributes" must be set to true -->

@@ -31,14 +31,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class AntiSamyPolicyTestWithTestConfig {
+public class AntiSamyPolicyWithTestConfigTest {
 
     public static final String POLICY_FILE = "./testConfig.xml";
     private static HtmlSanitizer antiSamy;
 
     @BeforeAll
     public static void setup() throws InvalidConfigException, XMLStreamException, IOException {
-        antiSamy = new HtmlSanitizer(new AntiSamyPolicy(AntiSamyPolicyTestWithTestConfig.class.getClassLoader().getResourceAsStream(POLICY_FILE)));
+        antiSamy = new HtmlSanitizer(new AntiSamyPolicy(AntiSamyPolicyWithTestConfigTest.class.getClassLoader().getResourceAsStream(POLICY_FILE)));
     }
 
     @ParameterizedTest
@@ -68,8 +68,6 @@ public class AntiSamyPolicyTestWithTestConfig {
                         "<p",false),
                 new TestInput("<p contenteditable=\"true\">This is a paragraph.</p>",
                         "<p", true),
-                new TestInput("<p dir=\"test\">This is a paragraph.</p>",
-                        "<p dir=\"test\">This is a paragraph.</p>", true),
         };
     }
 
